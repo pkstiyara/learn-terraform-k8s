@@ -12,6 +12,25 @@ variable "vpc_cidr" {
     default = "11.0.0.0/16"
 }
 
+variable "vpc_azs" {
+  description = "List of AZs"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b"]
+}
+
+variable "vpc_public_subnets" {
+  description = "List of public subnet CIDR ranges"
+  type        = list(string)
+  default     = ["11.0.11.0/24", "11.0.12.0/24"]
+}
+
+variable "vpc_private_subnets" {
+  description = "List of private subnet CIDR ranges"
+  type        = list(string)
+  default     = ["11.0.1.0/24", "11.0.2.0/24"]
+}
+
+
 variable "vpc_tags" {
     description = "Tags apply on the VPC"
     type = map(string)
